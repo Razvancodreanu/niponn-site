@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Galerie Poze</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Galerie Poze</h1>
+    <div class="gallery">
+        <!-- Exemplu cu spații codate -->
+        <img src="interior/balustrade%20interioare/WhatsApp%20Image%202025-08-22%20at%2001.13.32_1a5d5ff9.jpg"
+            alt="Imagine 1">
+        <img src="interior/balustrade%20interioare/WhatsApp%20Image%202025-08-22%20at%2001.13.32_3f83fc9f.jpg"
+            alt="Imagine 2">
+        <img src="reparatii/WhatsApp%20Image%202025-08-22%20at%2002.15.43_5bc238e1.jpg" alt="Imagine 3">
+        <img src="Florin/florin1.jpg" alt="Imagine 4">
+        <img src="exterior/scara1.jpg" alt="Imagine 5">
+        <!-- Poți adăuga mai multe după ce confirmăm că funcționează -->
+    </div>
+</body>
+
+</html>
