@@ -2,138 +2,196 @@
 <html lang="ro">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Niponn General Company</title>
-
-    <!-- FONT MODERN -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- STILURI CSS -->
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background: #000;
+            /* fundal negru */
             margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        header {
-            background: #1e88e5;
-            color: white;
-            padding: 20px 0;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 30px auto;
             padding: 20px;
-        }
-
-        button {
-            background: #ff5722;
             color: white;
-            border: none;
-            padding: 12px 25px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 20px;
         }
 
-        button:hover {
-            background: #e64a19;
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            background-color: #1e88e5;
+            /* fundal titlu */
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .cards {
+        .gallery-buttons {
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 30px;
+            gap: 25px;
         }
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        .gallery-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .gallery-button img {
             width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .card h3 {
-            margin-top: 0;
+        .gallery-button img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
         }
 
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
-            margin: 20px auto;
-        }
-
-        .menu a {
-            display: block;
-            padding: 15px;
-            background: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #0077cc;
+        .folder-title {
+            margin-top: 10px;
+            font-size: 16px;
             font-weight: bold;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s;
         }
 
-        .menu a:hover {
-            background: #66d2ff;
-            color: #fff;
+        /* Slideshow overlay */
+        #slideshowOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #slideshowOverlay img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        #closeSlideshow,
+        #prevBtn,
+        #nextBtn {
+            position: absolute;
+            color: white;
+            background: none;
+            border: none;
+            font-size: 40px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #closeSlideshow {
+            top: 20px;
+            right: 30px;
+        }
+
+        #prevBtn {
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #nextBtn {
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Niponn General Company</h1>
-        <nav>
-            <a href="index.html">Acasă</a>
-            <a href="despre.html">Despre</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <h1>Niponn General Company</h1>
 
-    <main>
-        <p>Confecții metalice și construcții civile și industriale</p>
-        <button>Apasă-mă!</button>
+    <div class="gallery-buttons" id="galleryButtons"></div>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Proiecte Industriale</h3>
-                <p>Lucrăm cu precizie la proiecte industriale mari.</p>
-            </div>
-            <div class="card">
-                <h3>Construcții Civile</h3>
-                <p>Realizăm construcții civile moderne și sigure.</p>
-            </div>
-            <div class="card">
-                <h3>Consultanță</h3>
-                <p>Oferim consultanță de specialitate pentru fiecare proiect.</p>
-            </div>
-        </div>
+    <!-- Slideshow overlay -->
+    <div id="slideshowOverlay">
+        <span id="closeSlideshow">&times;</span>
+        <img id="slideshowImg" src="">
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
+    </div>
 
-        <h2>Exterior</h2>
-        <div class="menu">
-            <a href="case.html">Case</a>
-            <a href="hoteluri.html">Hotelur
+    <script>
+        const folders = [
+            { path: 'images/exterior/case', prefix: 'C', title: 'Case', preview: 'C25.jpg', count: 50 },
+            { path: 'images/exterior/hoteluri', prefix: 'H', title: 'Hoteluri', preview: 'HT1.jpg', count: 50 },
+            { path: 'images/exterior/porti', prefix: 'P', title: 'Porți', preview: 'P1.jpg', count: 50 },
+            { path: 'images/exterior/balustrade-exterioare', prefix: 'BE', title: 'Balustrade Exterioare', preview: 'BE1.jpg', count: 50 },
+            { path: 'images/exterior/structuri-metalice-exterioare', prefix: 'SME', title: 'Structuri Metalice Exterioare', preview: 'SMESMI1.jpg', count: 50 },
+            { path: 'images/interior/scari', prefix: 'S', title: 'Scări', preview: 'S1.jpg', count: 50 },
+            { path: 'images/interior/balustrade-interioare', prefix: 'BI', title: 'Balustrade Interioare', preview: 'BI1.jpg', count: 50 },
+            { path: 'images/interior/structuri-metalice-interioare', prefix: 'SMI', title: 'Structuri Metalice Interioare', preview: 'SMI1.jpg', count: 50 },
+            { path: 'images/Florin', prefix: 'F', title: 'Florin', preview: 'F3.jpg', count: 50 },
+            { path: 'images/hala', prefix: 'H2', title: 'Hala', preview: 'H64.jpg', count: 50 },
+            { path: 'images/reparatii', prefix: 'R', title: 'Reparații', preview: 'R1.jpg', count: 50 }
+        ];
+
+        const galleryButtonsDiv = document.getElementById('galleryButtons');
+        let currentFolder = [];
+        let currentIndex = 0;
+
+        function openSlideshow(folderImages) {
+            currentFolder = folderImages;
+            currentIndex = 0;
+            document.getElementById('slideshowImg').src = currentFolder[currentIndex];
+            document.getElementById('slideshowOverlay').style.display = 'flex';
+        }
+
+        // Creăm butoanele cu imagini + titlu folder
+        folders.forEach(folder => {
+            const container = document.createElement('div');
+            container.className = 'gallery-button';
+
+            const img = document.createElement('img');
+            img.src = `${folder.path}/${folder.preview}`;
+            img.alt = folder.title;
+
+            const title = document.createElement('div');
+            title.className = 'folder-title';
+            title.textContent = folder.title;
+
+            container.appendChild(img);
+            container.appendChild(title);
+
+            img.onclick = () => {
+                const images = [];
+                for (let i = 1; i <= folder.count; i++) {
+                    images.push(`${folder.path}/${folder.prefix}${i}.jpg`);
+                }
+                openSlideshow(images.filter(src => src));
+            };
+
+            galleryButtonsDiv.appendChild(container);
+        });
+
+        // Slideshow controls
+        document.getElementById('closeSlideshow').onclick = function () {
+            document.getElementById('slideshowOverlay').style.display = 'none';
+        }
+
+        document.getElementById('prevBtn').onclick = function () {
+            currentIndex = (currentIndex - 1 + currentFolder.length) % currentFolder.length;
+            document.getElementById('slideshowImg').src = currentFolder[currentIndex];
+        }
+
+        document.getElementById('nextBtn').onclick = function () {
+            currentIndex = (currentIndex + 1) % currentFolder.length;
+            document.getElementById('slideshowImg').src = currentFolder[currentIndex];
+        }
+
+    </script>
+</body>
+
+</html>
