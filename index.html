@@ -4,7 +4,84 @@
 <head>
     <meta charset="UTF-8" />
     <title>Niponn General Company</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- FONT MODERN -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- STILURI CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1e88e5;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #e64a19;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,11 +90,36 @@
         <nav>
             <a href="index.html">Acasă</a>
             <a href="despre.html">Despre</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
+
     <main>
         <p>Confecții metalice și construcții civile și industriale</p>
+        <button>Apasă-mă!</button>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Proiecte Industriale</h3>
+                <p>Lucrăm cu precizie la proiecte industriale mari.</p>
+            </div>
+            <div class="card">
+                <h3>Construcții Civile</h3>
+                <p>Realizăm construcții civile moderne și sigure.</p>
+            </div>
+            <div class="card">
+                <h3>Consultanță</h3>
+                <p>Oferim consultanță de specialitate pentru fiecare proiect.</p>
+            </div>
+        </div>
     </main>
+
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            alert('Ai apăsat butonul!');
+        });
+    </script>
 </body>
 
 </html>
