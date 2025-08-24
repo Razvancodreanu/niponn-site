@@ -221,6 +221,23 @@
             font-style: italic;
             margin-top: 10px;
         }
+
+        .whatsapp-float {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 999;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
     </style>
 </head>
 
@@ -341,6 +358,11 @@
             document.getElementById('slideshowImg').src = currentFolder[currentIndex];
         }
     </script>
+    <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalica."
+        class="whatsapp-float" target="_blank" title="Contactează-ne pe WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
 
 </body>
 
