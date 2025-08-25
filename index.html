@@ -18,12 +18,9 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background: #e2e0dc;
-            /* noua culoare */
             color: #333;
-            /* recomandat să schimbi și textul la o culoare închisă pentru contrast */
             overflow-x: hidden;
         }
-
 
         a {
             text-decoration: none;
@@ -38,7 +35,6 @@
 
         .company-logo img {
             width: 270px;
-            /* cu ~50% mai mare */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -64,24 +60,26 @@
             font-weight: 600;
         }
 
-        /* Galerie - poze lipite, text centrat */
+        /* Galerie */
         .gallery-buttons {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 0;
+            /* fără spațiu între poze */
             margin: 0 auto;
         }
 
         .gallery-button {
             position: relative;
             width: 100%;
-            flex: 1 0 100%;
-            cursor: pointer;
+            height: 85vh;
+            /* 85% din înălțimea viewport */
+            overflow: hidden;
         }
 
         .gallery-button img {
             width: 100%;
-            height: 500px;
-            /* poze alungite */
+            height: 100%;
             object-fit: cover;
             display: block;
             transition: transform 0.6s ease, filter 0.6s ease;
@@ -93,18 +91,31 @@
             filter: brightness(100%);
         }
 
-        /* Text peste poză centrat */
+        /* Text peste poză */
         .folder-title {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -60%);
             font-size: 32px;
             font-weight: 600;
             color: #fff;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
             pointer-events: none;
             text-align: center;
+        }
+
+        /* Vezi mai multe */
+        .see-more {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
         }
 
         /* Slideshow overlay */
@@ -223,7 +234,7 @@
             opacity: 0.85;
         }
 
-        /* Footer companie */
+        /* Footer */
         .footer-company {
             background: #000;
             text-align: center;
@@ -349,8 +360,13 @@
             title.className = 'folder-title';
             title.textContent = folder.title;
 
+            const seeMore = document.createElement('div');
+            seeMore.className = 'see-more';
+            seeMore.textContent = 'Vezi mai multe';
+
             container.appendChild(img);
             container.appendChild(title);
+            container.appendChild(seeMore);
 
             img.onclick = () => {
                 const images = [];
@@ -377,6 +393,7 @@
             document.getElementById('slideshowImg').src = currentFolder[currentIndex];
         };
     </script>
+
 </body>
 
 </html>
