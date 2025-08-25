@@ -17,26 +17,28 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #f0e6d2;
-            /* culoarea principală din logo */
-            color: #fff;
-            line-height: 1.6;
+            background: #e2e0dc;
+            /* noua culoare */
+            color: #333;
+            /* recomandat să schimbi și textul la o culoare închisă pentru contrast */
             overflow-x: hidden;
         }
+
 
         a {
             text-decoration: none;
             color: inherit;
         }
 
-        /* Header */
+        /* Header - logo mare */
         .company-header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .company-logo img {
-            width: 180px;
+            width: 270px;
+            /* cu ~50% mai mare */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -62,27 +64,26 @@
             font-weight: 600;
         }
 
-        /* Galerie - full width */
+        /* Galerie - poze lipite, text centrat */
         .gallery-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin: 0 auto 80px;
-            width: 100%;
+            flex-wrap: wrap;
+            margin: 0 auto;
         }
 
         .gallery-button {
             position: relative;
             width: 100%;
+            flex: 1 0 100%;
             cursor: pointer;
-            overflow: hidden;
         }
 
         .gallery-button img {
             width: 100%;
             height: 500px;
-            /* alungit */
+            /* poze alungite */
             object-fit: cover;
+            display: block;
             transition: transform 0.6s ease, filter 0.6s ease;
             filter: brightness(85%);
         }
@@ -92,14 +93,18 @@
             filter: brightness(100%);
         }
 
+        /* Text peste poză centrat */
         .folder-title {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 24px;
-            font-weight: 500;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            font-weight: 600;
             color: #fff;
-            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+            text-align: center;
         }
 
         /* Slideshow overlay */
@@ -218,7 +223,7 @@
             opacity: 0.85;
         }
 
-        /* Footer nume companie */
+        /* Footer companie */
         .footer-company {
             background: #000;
             text-align: center;
