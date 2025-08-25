@@ -7,7 +7,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap"
         rel="stylesheet">
-
     <style>
         /* Reset & bază */
         * {
@@ -18,7 +17,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #000;
+            background: #f0e6d2;
+            /* culoarea principală din logo */
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -32,93 +32,71 @@
         /* Header */
         .company-header {
             text-align: center;
-            padding: 80px 20px 40px;
-        }
-
-        .company-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: #fff;
-        }
-
-        .company-subtitle {
-            font-size: 18px;
-            color: #c5c5c5;
-            font-style: italic;
-            margin-top: 15px;
-        }
-
-        .company-logo {
-            margin: 40px auto;
-            max-width: 280px;
+            padding: 40px 20px;
         }
 
         .company-logo img {
-            width: 100%;
+            width: 180px;
             height: auto;
             display: block;
+            margin: 0 auto;
         }
 
         /* Intro */
         .intro-section {
-            max-width: 950px;
-            margin: 0 auto 80px;
-            padding: 40px;
-            background: #111;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            font-size: 18px;
-            color: #e0e0e0;
-            font-family: 'Playfair Display', serif;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 20px;
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #333;
+            line-height: 1.8;
         }
 
         .intro-section p {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .intro-section strong {
-            color: #fff;
             font-weight: 600;
         }
 
-        /* Galerie */
+        /* Galerie - full width */
         .gallery-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 0 auto 80px;
+            width: 100%;
         }
 
         .gallery-button {
             position: relative;
+            width: 100%;
             cursor: pointer;
             overflow: hidden;
-            border-radius: 14px;
         }
 
         .gallery-button img {
             width: 100%;
-            height: 220px;
+            height: 500px;
+            /* alungit */
             object-fit: cover;
             transition: transform 0.6s ease, filter 0.6s ease;
-            filter: brightness(75%);
+            filter: brightness(85%);
         }
 
         .gallery-button:hover img {
-            transform: scale(1.08);
-            filter: brightness(95%);
+            transform: scale(1.05);
+            filter: brightness(100%);
         }
 
         .folder-title {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 500;
             color: #fff;
             text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
@@ -139,9 +117,9 @@
         }
 
         #slideshowOverlay img {
-            max-width: 88%;
-            max-height: 80%;
-            border-radius: 12px;
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
         }
 
@@ -183,9 +161,8 @@
 
         /* Contact */
         .contact-section {
-            background: #111;
-            padding: 50px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #000;
+            padding: 60px 30px;
             text-align: center;
         }
 
@@ -241,6 +218,17 @@
             opacity: 0.85;
         }
 
+        /* Footer nume companie */
+        .footer-company {
+            background: #000;
+            text-align: center;
+            padding: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+        }
+
         /* WhatsApp */
         .whatsapp-float {
             position: fixed;
@@ -251,7 +239,6 @@
             height: 65px;
             border-radius: 50%;
             background-color: #25D366;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -272,12 +259,9 @@
 <body>
 
     <div class="company-header">
-        <h1>Niponn General Company</h1>
-        <p class="company-subtitle">Confecții metalice premium & soluții personalizate</p>
-    </div>
-
-    <div class="company-logo">
-        <img src="./images/niponn-general-company-logo.png" alt="Logo Niponn General Company">
+        <div class="company-logo">
+            <img src="./images/niponn-general-company-logo.png" alt="Logo Niponn General Company">
+        </div>
     </div>
 
     <div class="intro-section">
@@ -314,6 +298,8 @@
             <button type="submit">Trimite mesaj</button>
         </form>
     </div>
+
+    <div class="footer-company">Niponn General Company</div>
 
     <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalica."
         class="whatsapp-float" target="_blank">
