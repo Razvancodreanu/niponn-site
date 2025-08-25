@@ -4,58 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <title>Niponn General Company</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap"
+        rel="stylesheet">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #000;
+        /* Reset & bază */
+        * {
             margin: 0;
-            padding: 20px;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        .company-header {
             text-align: center;
-            margin-bottom: 40px;
-            background-color: #1e88e5;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 80px 20px 40px;
         }
 
+        .company-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .company-subtitle {
+            font-size: 18px;
+            color: #c5c5c5;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .company-logo {
+            margin: 40px auto;
+            max-width: 280px;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Intro */
+        .intro-section {
+            max-width: 950px;
+            margin: 0 auto 80px;
+            padding: 40px;
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            font-size: 18px;
+            color: #e0e0e0;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        .intro-section p {
+            margin-bottom: 25px;
+        }
+
+        .intro-section strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Galerie */
         .gallery-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
         }
 
         .gallery-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            position: relative;
             cursor: pointer;
+            overflow: hidden;
+            border-radius: 14px;
         }
 
         .gallery-button img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 220px;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.6s ease, filter 0.6s ease;
+            filter: brightness(75%);
         }
 
-        .gallery-button img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+        .gallery-button:hover img {
+            transform: scale(1.08);
+            filter: brightness(95%);
         }
 
         .folder-title {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
         }
 
         /* Slideshow overlay */
@@ -66,264 +132,166 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.96);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
 
         #slideshowOverlay img {
-            max-width: 90%;
+            max-width: 88%;
             max-height: 80%;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
         }
 
         #closeSlideshow,
         #prevBtn,
         #nextBtn {
             position: absolute;
-            color: white;
+            color: #fff;
             background: none;
             border: none;
-            font-size: 40px;
+            font-size: 42px;
             cursor: pointer;
             user-select: none;
+            transition: opacity 0.3s;
         }
 
         #closeSlideshow {
-            top: 20px;
-            right: 30px;
+            top: 25px;
+            right: 40px;
         }
 
         #prevBtn {
-            left: 30px;
+            left: 40px;
             top: 50%;
             transform: translateY(-50%);
         }
 
         #nextBtn {
-            right: 30px;
+            right: 40px;
             top: 50%;
             transform: translateY(-50%);
         }
 
-        /* Contact section */
+        #closeSlideshow:hover,
+        #prevBtn:hover,
+        #nextBtn:hover {
+            opacity: 0.7;
+        }
+
+        /* Contact */
         .contact-section {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #1e88e5;
-            border-radius: 10px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            background: #111;
+            padding: 50px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
         }
 
         .contact-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 25px;
         }
 
         .contact-section p {
-            text-align: center;
-            margin: 5px 0;
-            font-size: 16px;
-            color: white;
+            margin-bottom: 10px;
+            color: #ccc;
         }
 
         .contact-section form {
+            max-width: 600px;
+            margin: 30px auto 0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
 
         .contact-section input,
         .contact-section textarea,
         .contact-section button {
-            padding: 10px;
-            border-radius: 5px;
+            padding: 14px;
+            border-radius: 8px;
             border: none;
-            font-size: 14px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .contact-section input,
         .contact-section textarea {
             width: 100%;
+            background: #222;
+            color: #fff;
+        }
+
+        .contact-section textarea {
             resize: vertical;
         }
 
         .contact-section button {
-            background-color: #000;
-            color: #fff;
+            background: linear-gradient(90deg, #d4af37, #c29a2e);
+            color: #000;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            transition: opacity 0.3s;
         }
 
         .contact-section button:hover {
-            background-color: #444;
+            opacity: 0.85;
         }
 
-        .intro-section {
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-            padding: 30px;
-            background-color: #000;
-            border: 1px solid #1e88e5;
-            border-radius: 12px;
-            color: #e0e0e0;
-            font-family: 'Georgia', serif;
-            font-size: 18px;
-            line-height: 1.8;
-            text-align: justify;
-            box-shadow: 0 0 20px rgba(30, 136, 229, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .intro-section p {
-            margin-bottom: 20px;
-            text-indent: 30px;
-        }
-
-        .intro-section strong {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .company-title {
-            text-align: center;
-            font-family: 'Georgia', serif;
-            font-size: 48px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 30px;
-            letter-spacing: 1.5px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-        }
-
-        .company-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .company-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            color: #fff;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        .company-subtitle {
-            font-size: 18px;
-            color: #aaa;
-            font-style: italic;
-            margin-top: 10px;
-        }
-
+        /* WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 25px;
+            right: 25px;
             z-index: 999;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             background-color: #25D366;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease;
         }
 
         .whatsapp-float img {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
         }
 
         .whatsapp-float:hover {
-            transform: translateX(-50%) scale(1.1);
+            transform: scale(1.1);
         }
     </style>
-
-    <head>
-        <meta charset="UTF-8">
-        <title>Niponn General Company</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background: #000;
-                margin: 0;
-                padding: 20px;
-                color: white;
-            }
-
-            h1 {
-                text-align: center;
-                margin-bottom: 40px;
-            }
-        </style>
-
-        <meta property="og:title" content="Niponn General Company">
-        <meta property="og:description"
-            content="Confecții metalice premium & soluții personalizate. Sudură, structuri metalice, mobilier personalizat.">
-        <meta property="og:image"
-            content="https://razvancodreanu.github.io/niponn-site/images/niponn-general-company-logo.png">
-
-
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        <meta property="og:url" content="https://www.niponngeneralcompany.com/">
-        <meta property="og:type" content="website">
-
-
-    </head>
-
-
-
 </head>
 
 <body>
+
     <div class="company-header">
         <h1>Niponn General Company</h1>
         <p class="company-subtitle">Confecții metalice premium & soluții personalizate</p>
     </div>
-    <div style="text-align: center; margin: 20px 0;">
-        <img src="./images/niponn-general-company-logo.png" alt="Logo Niponn General Company"
-            style="max-width: 300px; height: auto;">
 
-
+    <div class="company-logo">
+        <img src="./images/niponn-general-company-logo.png" alt="Logo Niponn General Company">
     </div>
-
-
-
 
     <div class="intro-section">
-        <p>
-            <strong>Niponn General Company</strong> este partenerul tău de încredere în realizarea lucrărilor metalice
-            de înaltă calitate, cu aplicații variate în domeniul rezidențial, comercial și industrial. Cu o experiență
-            solidă și o echipă dedicată, oferim soluții complete și durabile, adaptate nevoilor fiecărui client.
-        </p>
-        <p>
-            <strong>Servicii oferite:</strong> confecții metalice pentru porți, balustrade, garduri și structuri pentru
-            case, blocuri și hoteluri. De asemenea, realizăm mobilier metalic personalizat pentru bucătării, baruri și
-            spații comerciale, precum și reparații și adaptări pentru motostivuitoare și echipamente ce necesită sudură
-            de precizie.
-        </p>
-        <p>
-            <strong>De ce să ne alegi?</strong> Calitate garantată, execuție impecabilă, flexibilitate în proiectare și
-            promptitudine în livrare. La Niponn General Company, metalul prinde formă cu precizie, pasiune și viziune.
+        <p><strong>Niponn General Company</strong> este partenerul tău de încredere în realizarea lucrărilor metalice de
+            înaltă calitate.</p>
+        <p><strong>Servicii oferite:</strong> porți, balustrade, structuri metalice, mobilier personalizat, sudură de
+            precizie.</p>
+        <p><strong>De ce să ne alegi?</strong> Calitate garantată, execuție impecabilă, flexibilitate și promptitudine.
         </p>
     </div>
-
 
     <div class="gallery-buttons" id="galleryButtons"></div>
 
-    <!-- Slideshow overlay -->
+    <!-- Slideshow -->
     <div id="slideshowOverlay">
         <span id="closeSlideshow">&times;</span>
         <img id="slideshowImg" src="">
@@ -331,32 +299,26 @@
         <button id="nextBtn">&#10095;</button>
     </div>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <div class="contact-section">
         <h2>Contactați-ne</h2>
-        <p>Suntem din Timișoara</p>
+        <p>Timișoara</p>
         <p>Telefon: 0743516823</p>
-        <p>Email: <a href="mailto:west_flo70@yahoo.com" style="color: white;">west_flo70@yahoo.com</a></p>
+        <p>Email: <a href="mailto:west_flo70@yahoo.com">west_flo70@yahoo.com</a></p>
         <form action="https://formsubmit.co/razvan.codreanu90@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Nume complet" required>
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="message" rows="5" placeholder="Scrie mesajul tău aici..." required></textarea>
-
-            <!-- Redirecționare după trimitere -->
             <input type="hidden" name="_next" value="https://razvancodreanu.github.io/niponn-site/thank-you.html">
-
-            <!-- Dezactivare captcha -->
             <input type="hidden" name="_captcha" value="false">
-
             <button type="submit">Trimite mesaj</button>
         </form>
-
-
-
-
-
     </div>
 
+    <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalica."
+        class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
 
     <script>
         const folders = [
@@ -404,33 +366,26 @@
                 for (let i = 1; i <= folder.count; i++) {
                     images.push(`${folder.path}/${folder.prefix}${i}.jpg`);
                 }
-                openSlideshow(images.filter(src => src));
+                openSlideshow(images);
             };
 
             galleryButtonsDiv.appendChild(container);
         });
 
-        document.getElementById('closeSlideshow').onclick = function () {
+        document.getElementById('closeSlideshow').onclick = () => {
             document.getElementById('slideshowOverlay').style.display = 'none';
-        }
+        };
 
-        document.getElementById('prevBtn').onclick = function () {
+        document.getElementById('prevBtn').onclick = () => {
             currentIndex = (currentIndex - 1 + currentFolder.length) % currentFolder.length;
             document.getElementById('slideshowImg').src = currentFolder[currentIndex];
-        }
+        };
 
-        document.getElementById('nextBtn').onclick = function () {
+        document.getElementById('nextBtn').onclick = () => {
             currentIndex = (currentIndex + 1) % currentFolder.length;
             document.getElementById('slideshowImg').src = currentFolder[currentIndex];
-        }
+        };
     </script>
-    <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalica."
-        class="whatsapp-float" target="_blank" title="Contactează-ne pe WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
-
-    </a>
-
 </body>
 
 </html>
