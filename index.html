@@ -3,7 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Niponn General Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Niponn General Company, partenerul dumneavoastră de încredere în Timișoara, oferă lucrări metalice de excepție: porți personalizate, balustrade elegante, structuri metalice robuste, mobilier unic și sudură de precizie. Contactați-ne la 0743516823 pentru o ofertă personalizată!">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Porți Metalice și Balustrade de Excepție în Timișoara | Niponn General Company">
+    <meta property="og:description"
+        content="Descoperiți excelența în lucrări metalice personalizate în Timișoara. De la porți și balustrade la structuri metalice, oferim calitate superioară și execuție impecabilă.">
+    <meta property="og:image" content="https://www.niponngeneralcompany.com/images/niponn-general-company-logo.png">
+    <meta property="og:url" content="https://www.niponngeneralcompany.com/">
+    <meta property="og:type" content="website">
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Niponn General Company",
+      "image": "https://www.niponngeneralcompany.com/images/niponn-general-company-logo.png",
+      "telephone": "0743516823",
+      "email": "west_flo70@yahoo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Timișoara",
+        "addressCountry": "RO"
+      },
+      "url": "https://www.niponngeneralcompany.com/",
+      "description": "Servicii de porți metalice, balustrade, structuri metalice și sudură de precizie în Timișoara.",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+    </script>
+    <title>Porți Metalice Timișoara | Balustrade și Structuri Metalice | Niponn General Company</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap"
         rel="stylesheet">
@@ -27,6 +64,60 @@
             color: inherit;
         }
 
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #000;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* Header - logo mare */
         .company-header {
             text-align: center;
@@ -40,16 +131,31 @@
             margin: 0 auto;
         }
 
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #d4af37, #c29a2e);
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            opacity: 0.85;
+        }
+
         /* Intro */
         .intro-section {
             max-width: 1000px;
             margin: 0 auto 60px;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: #333;
-            line-height: 1.8;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .intro-section p {
@@ -60,12 +166,46 @@
             font-weight: 600;
         }
 
+        /* About Section */
+        .about-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
         /* Galerie */
         .gallery-buttons {
             display: flex;
             flex-direction: column;
             gap: 0;
-            /* fără spațiu între poze */
             margin: 0 auto;
         }
 
@@ -73,7 +213,6 @@
             position: relative;
             width: 100%;
             height: 85vh;
-            /* 85% din înălțimea viewport */
             overflow: hidden;
         }
 
@@ -188,9 +327,15 @@
             margin-bottom: 25px;
         }
 
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
         .contact-section p {
             margin-bottom: 10px;
-            color: #ccc;
+            color: #fff;
         }
 
         .contact-section form {
@@ -269,75 +414,167 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
         }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .intro-section {
+                font-size: 14px;
+                padding: 20px;
+            }
+
+            .gallery-button {
+                height: 50vh;
+            }
+
+            .folder-title {
+                font-size: 24px;
+            }
+
+            .see-more {
+                font-size: 16px;
+            }
+
+            .contact-section button {
+                padding: 16px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="company-header">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Acasă</a></li>
+            <li><a href="#servicii">Servicii</a></li>
+            <li><a href="#portofoliu">Portofoliu</a></li>
+            <li><a href="#despre">Despre Noi</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="company-header" id="home">
         <div class="company-logo">
-            <img src="./images/niponn-general-company-logo.png" alt="Logo Niponn General Company">
+            <img src="./images/niponn-general-company-logo.png"
+                alt="Logo Niponn General Company - Servicii Metalice Timișoara" loading="lazy">
         </div>
-    </div>
+    </header>
 
-    <div class="intro-section">
-        <p><strong>Niponn General Company</strong> este partenerul tău de încredere în realizarea lucrărilor metalice de
-            înaltă calitate.</p>
-        <p><strong>Servicii oferite:</strong> porți, balustrade, structuri metalice, mobilier personalizat, sudură de
-            precizie.</p>
-        <p><strong>De ce să ne alegi?</strong> Calitate garantată, execuție impecabilă, flexibilitate și promptitudine.
-        </p>
-    </div>
+    <section class="intro-section" id="servicii">
+        <h1>Porți Metalice și Balustrade de Excepție în Timișoara</h1>
+        <p><strong>Niponn General Company</strong> este partenerul dumneavoastră de încredere pentru realizarea
+            lucrărilor metalice de cea mai înaltă calitate în Timișoara și zonele învecinate.</p>
+        <p><strong>Serviciile noastre includ:</strong> porți metalice personalizate, balustrade elegante, structuri
+            metalice robuste, mobilier unic și sudură de precizie executată cu măiestrie.</p>
+        <p><strong>De ce să ne alegeți?</strong> Garantăm calitate superioară, execuție impecabilă, flexibilitate și
+            promptitudine în fiecare proiect realizat în Timișoara.</p>
+        <p>Cu o vastă experiență în domeniu, transformăm ideile dumneavoastră în realitate, utilizând materiale de
+            calitate și tehnici moderne. Contactați-ne pentru a primi o ofertă personalizată!</p>
+        <a href="#contact" class="cta-button">Cere o ofertă personalizată</a>
+    </section>
 
-    <div class="gallery-buttons" id="galleryButtons"></div>
+    <section class="about-section" id="despre">
+        <h2>Despre Niponn General Company</h2>
+        <p>Cu peste un deceniu de experiență, Niponn General Company se afirmă ca lider în Timișoara în domeniul
+            lucrărilor metalice, oferind soluții personalizate de excepție.</p>
+        <p>Ne dedicăm fiecărui proiect cu pasiune, utilizând materiale de cea mai înaltă calitate și tehnici avansate
+            pentru a crea porți metalice durabile, balustrade elegante și structuri metalice adaptate nevoilor
+            dumneavoastră. Promptitudinea și atenția la detalii sunt valorile care ne definesc.</p>
+        <p>Indiferent dacă doriți să înfrumusețați o locuință, un spațiu comercial sau industrial, suntem aici pentru a
+            vă oferi excelența în fiecare detaliu.</p>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>Ce spun clienții noștri</h2>
+
+
+        System: <div class="testimonial">
+            <p>„Am apelat la Niponn General Company pentru o poartă metalică personalizată și am fost impresionat de
+                profesionalismul și calitatea execuției. Recomand cu încredere!” - Radu T - Timișoara</p>
+        </div>
+        <div class="testimonial">
+            <p>„Balustrada interioară realizată de această echipă a adus un plus de eleganță locuinței mele. Servicii
+                ireproșabile!” - Cristina I. - Timișoara</p>
+        </div>
+        <div class="testimonial">
+            <p>„Sudura de precizie și structurile metalice realizate pentru afacerea mea au depășit toate așteptările. O
+                echipă de încredere!” - Andrei M. Timișoara</p>
+        </div>
+    </section>
+
+    <section class="gallery-buttons" id="portofoliu">
+        <h2>Portofoliu de Lucrări Metalice în Timișoara</h2>
+        <p>Explorați selecția noastră de proiecte recente, care reflectă măiestria și dedicarea noastră în realizarea
+            porților metalice, balustradelor și structurilor metalice în Timișoara.</p>
+    </section>
 
     <!-- Slideshow -->
     <div id="slideshowOverlay">
         <span id="closeSlideshow">&times;</span>
-        <img id="slideshowImg" src="">
+        <img id="slideshowImg" src="" alt="Imagine din portofoliu Niponn General Company - Lucrări Metalice Timișoara"
+            loading="lazy">
         <button id="prevBtn">&#10094;</button>
         <button id="nextBtn">&#10095;</button>
     </div>
 
     <!-- Contact -->
-    <div class="contact-section">
-        <h2>Contactați-ne</h2>
-        <p>Timișoara</p>
-        <p>Telefon: 0743516823</p>
+    <section class="contact-section" id="contact">
+        <h2>Contactați-ne pentru Lucrări Metalice de Excepție</h2>
+        <h3>Solicitați o Ofertă Personalizată</h3>
+        <p>Timișoara, România</p>
+        <p>Telefon: <a href="tel:0743516823">0743516823</a></p>
         <p>Email: <a href="mailto:west_flo70@yahoo.com">west_flo70@yahoo.com</a></p>
         <form action="https://formsubmit.co/razvan.codreanu90@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Nume complet" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" rows="5" placeholder="Scrie mesajul tău aici..." required></textarea>
+            <input type="email" name="email" placeholder="Adresă de email" required>
+            <input type="text" name="project_type" placeholder="Tip lucrare (ex. Poartă metalică, Balustradă)">
+            <textarea name="message" rows="5"
+                placeholder="Descrieți proiectul dumneavoastră... Ex. Solicit o ofertă pentru o poartă metalică în Timișoara."
+                required></textarea>
             <input type="hidden" name="_next" value="https://razvancodreanu.github.io/niponn-site/thank-you.html">
             <input type="hidden" name="_captcha" value="false">
             <button type="submit">Trimite mesaj</button>
         </form>
-    </div>
+    </section>
 
-    <div class="footer-company">Niponn General Company</div>
+    <footer class="footer-company">Niponn General Company
+        Excelență în Lucrări Metalice din Timișoara</footer>
 
-    <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalica."
+    <a href="https://wa.me/40743516823?text=Salut!%20Sunt%20interesat%20de%20o%20lucrare%20metalică."
         class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="Contactați Niponn General Company pe WhatsApp pentru lucrări metalice în Timișoara" loading="lazy" />
     </a>
 
     <script>
         const folders = [
-            { path: 'images/exterior/case', prefix: 'C', title: 'Case', preview: 'C25.jpg', count: 50 },
-            { path: 'images/exterior/hoteluri', prefix: 'HT', title: 'Hoteluri', preview: 'HT1.jpg', count: 50 },
-            { path: 'images/exterior/porti', prefix: 'P', title: 'Porți', preview: 'P1.jpg', count: 50 },
-            { path: 'images/exterior/balustrade-exterioare', prefix: 'BE', title: 'Balustrade Exterioare', preview: 'BE1.jpg', count: 50 },
-            { path: 'images/exterior/structuri-metalice-exterioare', prefix: 'SMESMI', title: 'Structuri Metalice Exterioare', preview: 'SMESMI1.jpg', count: 50 },
-            { path: 'images/interior/scari', prefix: 'S', title: 'Scări', preview: 'S1.jpg', count: 50 },
-            { path: 'images/interior/balustrade-interioare', prefix: 'BI', title: 'Balustrade Interioare', preview: 'BI1.jpg', count: 50 },
-            { path: 'images/interior/structuri-metalice-interioare', prefix: 'SMI', title: 'Structuri Metalice Interioare', preview: 'SMI1.jpg', count: 50 },
-            { path: 'images/Florin', prefix: 'F', title: 'Florin', preview: 'F3.jpg', count: 50 },
-            { path: 'images/hala', prefix: 'H', title: 'Hala', preview: 'H64.jpg', count: 50 },
-            { path: 'images/reparatii', prefix: 'R', title: 'Reparații', preview: 'R1.jpg', count: 50 }
+            { path: 'images/exterior/case', prefix: 'C', title: 'Lucrări metalice pentru locuințe, realizate cu măiestrie în Timișoara', preview: 'C25.jpg', count: 50, alt: 'Lucrări metalice pentru case în Timișoara' },
+            { path: 'images/exterior/hoteluri', prefix: 'HT', title: 'Structuri metalice elegante pentru hoteluri în Timișoara', preview: 'HT1.jpg', count: 50, alt: 'Structuri metalice pentru hoteluri în Timișoara' },
+            { path: 'images/exterior/porti', prefix: 'P', title: 'Porți metalice personalizate, executate cu precizie în Timișoara', preview: 'P1.jpg', count: 50, alt: 'Porți metalice personalizate Timișoara' },
+            { path: 'images/exterior/balustrade-exterioare', prefix: 'BE', title: 'Balustrade exterioare de calitate superioară în Timișoara', preview: 'BE1.jpg', count: 50, alt: 'Balustrade exterioare metalice Timișoara' },
+            { path: 'images/exterior/structuri-metalice-exterioare', prefix: 'SMESMI', title: 'Structuri metalice exterioare robuste în Timișoara', preview: 'SMESMI1.jpg', count: 50, alt: 'Structuri metalice exterioare Timișoara' },
+            { path: 'images/interior/scari', prefix: 'S', title: 'Scări metalice interioare, proiectate cu eleganță în Timișoara', preview: 'S1.jpg', count: 50, alt: 'Scări metalice interioare Timișoara' },
+            { path: 'images/interior/balustrade-interioare', prefix: 'BI', title: 'Balustrade interioare moderne pentru Timișoara', preview: 'BI1.jpg', count: 50, alt: 'Balustrade interioare metalice Timișoara' },
+            { path: 'images/interior/structuri-metalice-interioare', prefix: 'SMI', title: 'Structuri metalice interioare, create cu precizie în Timișoara', preview: 'SMI1.jpg', count: 50, alt: 'Structuri metalice interioare Timișoara' },
+            { path: 'images/Florin', prefix: 'F', title: 'Proiecte metalice unicat realizate în Timișoara', preview: 'F3.jpg', count: 50, alt: 'Proiecte metalice Florin Timișoara' },
+            { path: 'images/hala', prefix: 'H', title: 'Lucrări realizate la hala noastră din Timișoara', preview: 'H64.jpg', count: 50, alt: 'Hale metalice Timișoara' },
+            { path: 'images/reparatii', prefix: 'R', title: 'Reparații metalice profesionale în Timișoara', preview: 'R1.jpg', count: 50, alt: 'Reparații metalice Timișoara' }
         ];
 
-        const galleryButtonsDiv = document.getElementById('galleryButtons');
+        const galleryButtonsDiv = document.getElementById('portofoliu');
         let currentFolder = [];
         let currentIndex = 0;
 
@@ -354,7 +591,8 @@
 
             const img = document.createElement('img');
             img.src = `${folder.path}/${folder.preview}`;
-            img.alt = folder.title;
+            img.alt = `${folder.alt} - Niponn General Company`;
+            img.loading = 'lazy';
 
             const title = document.createElement('div');
             title.className = 'folder-title';
@@ -362,7 +600,7 @@
 
             const seeMore = document.createElement('div');
             seeMore.className = 'see-more';
-            seeMore.textContent = 'Vezi mai multe';
+            seeMore.textContent = 'Descoperă mai multe';
 
             container.appendChild(img);
             container.appendChild(title);
